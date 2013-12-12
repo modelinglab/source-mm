@@ -9,7 +9,7 @@
     </parent>
     <groupId>org.modelinglab.mm</groupId>
     <artifactId>source</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Meta: Source</name>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.modelinglab.utils</groupId>
             <artifactId>doc</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
