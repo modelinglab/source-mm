@@ -4,7 +4,14 @@
  */
 package org.modelinglab.mm.source;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URL;
 import java.util.Objects;
 
 /**
@@ -12,16 +19,37 @@ import java.util.Objects;
  * @author gortiz
  */
 public class Source {
-    private URI resource;
+    /**
+     * The URI where the source is stored.
+     */
+    private final URI resource;
+    /**
+     * The text that contains the source, if the source has not been saved.
+     */
+    private final String text;
     
-    public Source(URI resource){
+    public Source(URI resource, String text){
         this.resource = resource;
+        this.text = text;
     }
 
     public URI getResource() {
         return resource;
     }
 
+    public Reader getReader() throws MalformedURLException, IOException {
+        InputStream is;
+        if(text != null) {
+            is = new ByteArrayInputStream(text.getBytes());
+        }
+        else {
+            URL url = resource.toURL();
+            is = url.openStream();
+        }
+        Reader reader = new InputStreamReader(is);
+        return reader;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
