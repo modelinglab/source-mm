@@ -57,6 +57,12 @@ public class SourcePosition implements Serializable, javax.swing.text.Position {
         this.column = lineCol.get(LineBasedDocTool.LineColumnEnum.COLUMN);
     }
 
+    public SourcePosition(int line, int column, int offset) {
+        this.line = line;
+        this.column = column;
+        this.offset = offset;
+    }
+    
     /**
      * @return pointed column in the content or text (one-based)
      */
