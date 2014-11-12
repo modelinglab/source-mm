@@ -5,14 +5,18 @@
     <parent>
         <groupId>org.modelinglab</groupId>
         <artifactId>general-parent</artifactId>
-        <version>5-SNAPSHOT</version>
+        <version>5</version>
     </parent>
     <groupId>org.modelinglab.mm</groupId>
     <artifactId>source</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
     <packaging>jar</packaging>
 
     <name>Meta: Source</name>
+    
+    <properties>
+        <utils.version>1.0.5</utils.version>
+    </properties>
     
     <scm>
         <developerConnection>scm:git:ssh://github.com/modelinglab/source-mm.git</developerConnection>
@@ -33,7 +37,7 @@
         <dependency>
             <groupId>org.modelinglab.utils</groupId>
             <artifactId>doc</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
+            <version>${utils.version}</version>
         </dependency>
     </dependencies>
 </project>
